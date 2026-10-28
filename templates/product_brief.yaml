@@ -1,0 +1,64 @@
+meta:
+  product_brief_id: "US-Y1-20261028-001"
+  revision: 1
+  market_id: "us-y1-pod"
+  status: "DRAFT"
+  owner: "待填写"
+  created_at: "2026-10-28T00:00:00+08:00"
+
+source:
+  type: "supplier | manual | capture"
+  reference: "脱敏链接或内部来源编号"
+  captured_at: ""
+
+product:
+  internal_name: "示例长裤"
+  target_name: "Men's casual trousers"
+  category: "服饰 > 裤装"
+  business_mode: "pod"
+
+specs:
+  weight_kg: 0.6
+  package_dimensions: "30x20x1 cm"
+  material: "待供应商确认"
+  size_chart_id: "SIZE-US-Y1-001"
+  color_map:
+    "Black": "#000000"
+    "Beige": "#D8C3A5"
+
+skus:
+  - sku_id: "DEMO-US-001-BLK-S"
+    color: "Black"
+    size: "S"
+    inventory: 500
+    price_ref: "DEMO-US-001-BLK-S"
+    image_refs:
+      - "assets/main/black-front.jpg"
+      - "assets/main/black-back.jpg"
+
+assets:
+  main_images:
+    - "assets/main/black-front.jpg"
+    - "assets/main/black-back.jpg"
+  skc_images: []
+  title_candidates: []
+  title_final: ""
+  core_selling_point: ""
+  secondary_points: []
+  rights_evidence: []
+
+compliance:
+  pack_ref: "compliance/DEMO-US-001.md"
+  status: "PENDING"
+  manufacturer_profile_id: ""
+  market_requirements: []
+
+approvals:
+  selection: false
+  pricing: false
+  assets: false
+  compliance: false
+
+notes:
+  strategic_loss_reason: ""
+  exceptions: []

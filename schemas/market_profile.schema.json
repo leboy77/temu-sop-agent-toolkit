@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Temu Market Profile",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "market_id",
+    "platform",
+    "locale",
+    "fulfillment",
+    "compliance",
+    "pricing",
+    "rules_sources"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "market_id": {"enum": ["eu-y2", "us-y1-pod"]},
+    "platform": {"const": "temu"},
+    "status": {"enum": ["draft", "reviewed", "active", "retired"]},
+    "rule_reviewed_at": {"type": "string"},
+    "owner": {"type": "string"},
+    "locale": {"type": "object"},
+    "fulfillment": {"type": "object"},
+    "compliance": {"type": "object"},
+    "pricing": {"type": "object"},
+    "listing": {"type": "object"},
+    "toolchain": {"type": "object"},
+    "rules_sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["title", "effective_date", "reviewed_by"],
+        "properties": {
+          "title": {"type": "string"},
+          "effective_date": {"type": "string"},
+          "reviewed_by": {"type": "string"}
+        }
+      }
+    }
+  }
+}

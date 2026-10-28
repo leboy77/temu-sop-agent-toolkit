@@ -1,0 +1,35 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+
+# Raw internal documents and captures
+archive/source-private/
+*.downloading
+*.pdf
+*.zip
+*.png
+*.jpg
+*.jpeg
+*.xlsx
+
+# Keep intentional templates/samples trackable
+!templates/**/*.xlsx
+!examples/**/*.png
+
+# Runtime records may contain business data
+records/*.json
+records/*.csv
+records/*.log
+
+# Secrets and credentials
+*.pem
+*.key
+secrets.json
+credentials.json
+tokens.json
+
+# OS files
+.DS_Store
+Thumbs.db

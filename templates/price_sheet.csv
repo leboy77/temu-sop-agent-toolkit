@@ -1,0 +1,2 @@
+product_brief_id,sku_id,currency,product_cost,freight_per_kg,weight_kg,freight_fixed,return_rate_pct,platform_fee_pct,ad_cost_pct,target_margin_pct,target_price,approval_status,note
+DEMO-US-001,DEMO-US-001-BLK-S,CNY,50,70,0.6,5,7,10,5,20,150,DRAFT,示例值仅用于演示公式

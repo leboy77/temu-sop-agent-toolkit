@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SOP Exception Record",
+  "type": "object",
+  "required": [
+    "run_id",
+    "product_brief_id",
+    "stage",
+    "error_type",
+    "symptom",
+    "retryable",
+    "owner",
+    "timestamp"
+  ],
+  "properties": {
+    "run_id": {"type": "string"},
+    "product_brief_id": {"type": "string"},
+    "stage": {"type": "string"},
+    "error_type": {
+      "enum": [
+        "INPUT_MISSING",
+        "PRICE_BELOW_FLOOR",
+        "ASSET_MISMATCH",
+        "ASSET_QUALITY_REJECTED",
+        "COMPLIANCE_REJECTED",
+        "AUTH_EXPIRED",
+        "PLATFORM_LIMIT",
+        "ERP_TIMEOUT",
+        "PUBLISH_UNKNOWN",
+        "FULFILLMENT_DELAY",
+        "DATA_INSUFFICIENT"
+      ]
+    },
+    "symptom": {"type": "string"},
+    "evidence": {"type": "string"},
+    "retryable": {"type": "boolean"},
+    "owner": {"type": "string"},
+    "action": {"type": "string"},
+    "result": {"type": "string"},
+    "timestamp": {"type": "string"}
+  }
+}

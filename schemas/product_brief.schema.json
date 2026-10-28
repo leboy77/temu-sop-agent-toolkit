@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Temu Product Brief",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "meta",
+    "product",
+    "specs",
+    "skus",
+    "assets",
+    "compliance",
+    "approvals"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["product_brief_id", "revision", "market_id", "status", "owner"],
+      "properties": {
+        "product_brief_id": {"type": "string", "minLength": 1},
+        "revision": {"type": "integer", "minimum": 1},
+        "market_id": {"enum": ["eu-y2", "us-y1-pod"]},
+        "status": {
+          "enum": [
+            "DRAFT",
+            "PRICED",
+            "ASSETS_READY",
+            "COMPLIANCE_READY",
+            "PUBLISH_READY",
+            "PUBLISHED",
+            "LIVE",
+            "OPTIMIZING",
+            "ARCHIVED",
+            "BLOCKED",
+            "REVIEW_REQUIRED",
+            "FAILED"
+          ]
+        },
+        "owner": {"type": "string", "minLength": 1},
+        "created_at": {"type": "string"}
+      }
+    },
+    "product": {
+      "type": "object",
+      "required": ["internal_name", "target_name", "category", "business_mode"],
+      "properties": {
+        "internal_name": {"type": "string", "minLength": 1},
+        "target_name": {"type": "string", "minLength": 1},
+        "category": {"type": "string", "minLength": 1},
+        "business_mode": {"type": "string", "minLength": 1}
+      }
+    },
+    "specs": {
+      "type": "object",
+      "required": ["weight_kg", "package_dimensions", "material", "size_chart_id"],
+      "properties": {
+        "weight_kg": {"type": "number", "exclusiveMinimum": 0},
+        "package_dimensions": {"type": "string"},
+        "material": {"type": "string"},
+        "size_chart_id": {"type": "string"}
+      }
+    },
+    "skus": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["sku_id", "color", "size", "inventory", "price_ref"],
+        "properties": {
+          "sku_id": {"type": "string"},
+          "color": {"type": "string"},
+          "size": {"type": "string"},
+          "inventory": {"type": "integer", "minimum": 0},
+          "price_ref": {"type": "string"},
+          "image_refs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "required": ["main_images", "title_final", "core_selling_point", "rights_evidence"],
+      "properties": {
+        "main_images": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "title_final": {"type": "string"},
+        "core_selling_point": {"type": "string"},
+        "rights_evidence": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "compliance": {
+      "type": "object",
+      "required": ["pack_ref", "status"],
+      "properties": {
+        "pack_ref": {"type": "string"},
+        "status": {"enum": ["PENDING", "PASSED", "BLOCKED"]}
+      }
+    },
+    "approvals": {
+      "type": "object",
+      "required": ["selection", "pricing", "assets", "compliance"],
+      "properties": {
+        "selection": {"type": "boolean"},
+        "pricing": {"type": "boolean"},
+        "assets": {"type": "boolean"},
+        "compliance": {"type": "boolean"}
+      }
+    }
+  }
+}
