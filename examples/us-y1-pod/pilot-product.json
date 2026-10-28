@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "product_brief_id": "DEMO-US-POD-001",
+    "revision": 1,
+    "market_id": "us-y1-pod",
+    "status": "PRICED",
+    "owner": "demo",
+    "created_at": "2026-10-28T00:00:00+08:00",
+    "price_sheet_path": "examples/us-y1-pod/pilot-price-sheet.csv"
+  },
+  "source": {
+    "type": "manual",
+    "reference": "脱敏演示商品",
+    "captured_at": "2026-10-28"
+  },
+  "product": {
+    "internal_name": "演示休闲裤",
+    "target_name": "Men's casual trousers",
+    "category": "Apparel > Pants",
+    "business_mode": "pod"
+  },
+  "specs": {
+    "weight_kg": 0.6,
+    "package_dimensions": "30x20x1 cm",
+    "material": "Cotton blend - demo",
+    "size_chart_id": "SIZE-DEMO-US-001"
+  },
+  "skus": [
+    {
+      "sku_id": "DEMO-US-POD-001-BLK-M",
+      "color": "Black",
+      "size": "M",
+      "inventory": 500,
+      "price_ref": "DEMO-US-POD-001-BLK-M",
+      "image_refs": []
+    }
+  ],
+  "assets": {
+    "main_images": [],
+    "skc_images": [],
+    "title_candidates": [],
+    "title_final": "",
+    "core_selling_point": "",
+    "secondary_points": [],
+    "rights_evidence": []
+  },
+  "compliance": {
+    "pack_ref": "",
+    "status": "PENDING",
+    "manufacturer_profile_id": "",
+    "market_requirements": []
+  },
+  "approvals": {
+    "selection": true,
+    "pricing": true,
+    "assets": false,
+    "compliance": false
+  },
+  "notes": {
+    "strategic_loss_reason": "",
+    "exceptions": []
+  }
+}

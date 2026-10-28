@@ -29,7 +29,7 @@
 
 ## 配置
 
-市场差异、仓库、时效、规则和工具映射见 `market_profile.yaml`。
+市场差异、仓库、时效、规则和工具映射见 `market_profile.json`。
 
 - `setup_and_fulfillment.md`
 - `pod_listing_workflow.md`

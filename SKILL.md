@@ -5,7 +5,7 @@ description: >
   商品素材、合规、上架、ERP/履约、活动、流量、广告和售后分析。
   不用于绕过平台规则、伪造数据、自动审批或未经人工确认的批量提交。
 metadata:
-  version: 0.1.0
+  version: 0.2.0
   category: e-commerce/temu-operations
   status: draft
 ---

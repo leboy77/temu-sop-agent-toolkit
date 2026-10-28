@@ -56,12 +56,24 @@ archive/       私有原件说明，不存放原始 PDF
 
 ## 快速开始
 
-1. 复制 `templates/product_brief.yaml`，填写一个真实但已脱敏的商品。
+1. 复制 `templates/product_brief.json`，填写一个真实但已脱敏的商品。
 2. 复制 `templates/price_sheet.csv`，补齐成本、重量、退货率和费用。
 3. 运行 `python scripts/calc_price.py templates/price_sheet.csv`。
-4. 按目标市场打开 `markets/eu-y2/README.md` 或 `markets/us-y1-pod/README.md`。
-5. 从 `modules/00_orchestrator/README.md` 开始推进状态。
-6. 每次异常写入 `templates/exception_log.csv`，不要只留在聊天或截图中。
+4. 运行 `scripts/preflight.py` 检查当前阶段是否允许继续。
+5. 按目标市场打开 `markets/eu-y2/README.md` 或 `markets/us-y1-pod/README.md`。
+6. 从 `modules/00_orchestrator/README.md` 开始推进状态。
+7. 每次异常写入 `templates/exception_log.csv`，不要只留在聊天或截图中。
+
+美国示例：
+
+```powershell
+python scripts/preflight.py `
+  --market markets/us-y1-pod/market_profile.json `
+  --brief examples/us-y1-pod/pilot-product.json `
+  --target-state PRICED
+```
+
+检查器返回 `PASS` 才可进入下一模块；返回 `BLOCKED` 时按 `next_action` 回到对应模块。
 
 ## 与已有工具的关系
 
@@ -69,6 +81,8 @@ archive/       私有原件说明，不存放原始 PDF
 
 ## 当前状态
 
-这是基于两份内部培训资料的 v0 重构草案。市场阈值和平台规则在正式使用前必须由业务负责人复核。
+这是基于两份内部培训资料的 v0.2 可执行草案。市场阈值和平台规则在正式使用前必须由业务负责人复核。
+
+当前已经可以运行核价和阶段检查，详细推进步骤见 [ROADMAP.md](ROADMAP.md)。
 
 参考架构：[AI-Cross-Border-Ecommerce-Agent-Toolkit](https://github.com/heqiangdiao-wq/AI-Cross-Border-Ecommerce-Agent-Toolkit)。

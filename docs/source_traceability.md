@@ -21,7 +21,7 @@
 | --- | --- | --- |
 | 1-5 | 三仓、运费、核价表与测试款 | `markets/us-y1-pod/`, `modules/02_pricing` |
 | 6-13 | 运营平台绑定、配置与采集 | `markets/us-y1-pod/setup_and_fulfillment.md` |
-| 14-20 | 店铺配置、POD/普通商品业务模式 | `markets/us-y1-pod/market_profile.yaml` |
+| 14-20 | 店铺配置、POD/普通商品业务模式 | `markets/us-y1-pod/market_profile.json` |
 | 21-23 | 尺码表、SKC 颜色图和店铺模板 | `modules/03_assets`, `modules/04_listing` |
 | 24-31 | 采集、编辑图片和批量上架 | `markets/us-y1-pod/pod_listing_workflow.md` |
 | 32-39 | AI 出图、标题模板和常见失败 | `modules/03_assets`, `core/04_exception_taxonomy.md` |

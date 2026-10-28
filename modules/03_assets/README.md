@@ -6,7 +6,7 @@
 
 ## 输入
 
-- 已批准的 `product_brief.yaml`
+- 已批准的 `product_brief.json`
 - 已通过的核价表
 - 供图和图案授权
 - 尺寸表和 SKU 映射

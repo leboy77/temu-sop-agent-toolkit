@@ -28,7 +28,7 @@
 
 ## 配置
 
-市场差异、仓库策略和工具映射见 `market_profile.yaml`。具体后台步骤见：
+市场差异、仓库策略和工具映射见 `market_profile.json`。具体后台步骤见：
 
 - `setup_and_fulfillment.md`
 - `compliance.md`

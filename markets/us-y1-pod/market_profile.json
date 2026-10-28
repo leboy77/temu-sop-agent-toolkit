@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "market_id": "us-y1-pod",
+  "platform": "temu",
+  "status": "draft",
+  "rule_reviewed_at": "2026-10-28",
+  "owner": "待指定",
+  "locale": {
+    "buyer_languages": ["en-US"],
+    "internal_language": "zh-CN",
+    "unit_system": "imperial_and_metric_display_as_rule_requires"
+  },
+  "fulfillment": {
+    "warehouse_zones": ["east", "central", "west"],
+    "shipping_template_count": 3,
+    "remove_remote_islands": true,
+    "quoted_business_days": 2,
+    "mode": "y1"
+  },
+  "business_modes": ["pod", "standard"],
+  "compliance": {
+    "required": [
+      "manufacturer_information",
+      "product_label",
+      "material_accuracy",
+      "intellectual_property_rights"
+    ],
+    "evidence_required": true
+  },
+  "pricing": {
+    "cost_currency": "CNY",
+    "sale_currency": "USD",
+    "source": "price_sheet.csv",
+    "freight_reference": {
+      "route": "express",
+      "per_kg": 70,
+      "fixed": 5,
+      "currency": "CNY",
+      "status": "verify_before_use"
+    },
+    "return_rate_variable_by_style": true,
+    "human_approval_required": true
+  },
+  "listing": {
+    "collection_rule": "先采集测试，再根据数据裂变",
+    "product_templates": ["single_sku", "multi_sku"],
+    "title_limits": {
+      "recommended_min": 120,
+      "recommended_max": 220,
+      "hard_max": 250,
+      "status": "tool_specific_verify_at_publish"
+    }
+  },
+  "toolchain": {
+    "operations_platform": "configure_privately",
+    "source_platform": "configure_privately",
+    "image_tools": ["ai_image_pipeline"],
+    "shared_automations": ["price-checker", "auto-recolor", "downlist-assistant", "ad-monitor"]
+  },
+  "rules_sources": [
+    {
+      "title": "美国 Y1 POD 内部培训资料",
+      "effective_date": "unknown",
+      "reviewed_by": "待指定"
+    },
+    {
+      "title": "Temu 美国卖家后台当前规则",
+      "effective_date": "verify_at_publish_time",
+      "reviewed_by": "待指定"
+    }
+  ]
+}
