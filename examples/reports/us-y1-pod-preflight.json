@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "current_state": "PRICED",
+  "target_state": "PRICED",
+  "next_state": "PRICED",
+  "next_action": "03_assets",
+  "product_brief_id": "DEMO-US-POD-001",
+  "market_id": "us-y1-pod",
+  "blockers": [],
+  "warnings": [],
+  "price_results": {
+    "DEMO-US-POD-001-BLK-M": {
+      "break_even_price_base": "122.11",
+      "break_even_price_sale": "16.96",
+      "target_floor_price_base": "159.68",
+      "target_floor_price_sale": "22.18",
+      "target_price_base": "165.60",
+      "target_sale_price": "23",
+      "profit": "36.97",
+      "profit_margin_pct": "22.32",
+      "computed_status": "PASS"
+    }
+  }
+}

@@ -1,2 +1,2 @@
-product_brief_id,sku_id,currency,product_cost,freight_per_kg,weight_kg,freight_fixed,return_rate_pct,platform_fee_pct,ad_cost_pct,target_margin_pct,target_price,approval_status,note
-DEMO-EU-Y2-001,DEMO-EU-Y2-001-NAVY-M,EUR,30,25,0.25,4,10,10,5,20,80,DRAFT,脱敏演示数据
+product_brief_id,sku_id,cost_currency,sale_currency,fx_sale_to_cost,product_cost,freight_per_kg,weight_kg,freight_fixed,return_rate_pct,platform_fee_pct,ad_cost_pct,target_margin_pct,target_sale_price,approval_status,note
+DEMO-EU-Y2-001,DEMO-EU-Y2-001-NAVY-M,EUR,EUR,1,30,25,0.25,4,10,10,5,20,80,DRAFT,脱敏演示数据

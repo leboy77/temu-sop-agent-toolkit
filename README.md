@@ -48,6 +48,7 @@ modules/       八个可复用业务能力
 schemas/       机器可读的数据结构
 templates/     商品、核价、合规和日报模板
 scripts/       确定性计算与检查
+checklists/    欧洲和美国逐项发布检查
 examples/      脱敏的端到端示例
 automations/   现有浏览器扩展和 RPA 的接入边界
 docs/          来源映射和迁移计划

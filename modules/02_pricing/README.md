@@ -9,6 +9,7 @@
 - `templates/price_sheet.csv`
 - 市场配置中的税率、运费和费用规则
 - 实际采购价、重量、尺寸和包装
+- 成本币种、销售币种和汇率
 - 风格退货率
 - 目标毛利和战略亏损上限
 
@@ -30,6 +31,8 @@ python scripts/calc_price.py templates/price_sheet.csv
 ```
 
 脚本只做确定性计算。价格决策、促销节奏和亏损换取销量的策略由业务负责人审批。
+
+价格表必须明确 `cost_currency`、`sale_currency` 和 `fx_sale_to_cost`。脚本同时在成本币种与销售币种中输出盈亏价，避免人民币成本和美元售价混算。
 
 ## SKU 结构
 

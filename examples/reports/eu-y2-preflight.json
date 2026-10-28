@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "current_state": "PRICED",
+  "target_state": "PRICED",
+  "next_state": "PRICED",
+  "next_action": "03_assets",
+  "product_brief_id": "DEMO-EU-Y2-001",
+  "market_id": "eu-y2",
+  "blockers": [],
+  "warnings": [],
+  "price_results": {
+    "DEMO-EU-Y2-001-NAVY-M": {
+      "break_even_price_base": "52.09",
+      "break_even_price_sale": "52.09",
+      "target_floor_price_base": "68.12",
+      "target_floor_price_sale": "68.12",
+      "target_price_base": "80.00",
+      "target_sale_price": "80",
+      "profit": "23.72",
+      "profit_margin_pct": "29.66",
+      "computed_status": "PASS"
+    }
+  }
+}

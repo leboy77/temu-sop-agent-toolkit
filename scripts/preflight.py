@@ -194,9 +194,12 @@ def run_preflight(
         "warnings": warnings,
         "price_results": {
             sku_id: {
-                "break_even_price": row["break_even_price"],
-                "target_floor_price": row["target_floor_price"],
-                "target_price": row["target_price"],
+                "break_even_price_base": row["break_even_price_base"],
+                "break_even_price_sale": row["break_even_price_sale"],
+                "target_floor_price_base": row["target_floor_price_base"],
+                "target_floor_price_sale": row["target_floor_price_sale"],
+                "target_price_base": row["target_price_base"],
+                "target_sale_price": row["target_sale_price"],
                 "profit": row["profit"],
                 "profit_margin_pct": row["profit_margin_pct"],
                 "computed_status": row["computed_status"],

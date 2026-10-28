@@ -13,7 +13,9 @@ from typing import Any
 REQUIRED_FIELDS = [
     "product_brief_id",
     "sku_id",
-    "currency",
+    "cost_currency",
+    "sale_currency",
+    "fx_sale_to_cost",
     "product_cost",
     "freight_per_kg",
     "weight_kg",
@@ -22,10 +24,11 @@ REQUIRED_FIELDS = [
     "platform_fee_pct",
     "ad_cost_pct",
     "target_margin_pct",
-    "target_price",
+    "target_sale_price",
 ]
 
 NUMERIC_FIELDS = [
+    "fx_sale_to_cost",
     "product_cost",
     "freight_per_kg",
     "weight_kg",
@@ -34,7 +37,7 @@ NUMERIC_FIELDS = [
     "platform_fee_pct",
     "ad_cost_pct",
     "target_margin_pct",
-    "target_price",
+    "target_sale_price",
 ]
 
 
@@ -50,6 +53,7 @@ def calculate(row: dict[str, str]) -> dict[str, str]:
     if missing:
         raise ValueError(f"{row.get('sku_id', '<unknown>')}: missing {', '.join(missing)}")
 
+    fx_sale_to_cost = decimal_value(row, "fx_sale_to_cost")
     product_cost = decimal_value(row, "product_cost")
     freight_per_kg = decimal_value(row, "freight_per_kg")
     weight_kg = decimal_value(row, "weight_kg")
@@ -58,14 +62,16 @@ def calculate(row: dict[str, str]) -> dict[str, str]:
     platform_fee = decimal_value(row, "platform_fee_pct") / 100
     ad_cost = decimal_value(row, "ad_cost_pct") / 100
     target_margin = decimal_value(row, "target_margin_pct") / 100
-    target_price = decimal_value(row, "target_price")
+    target_sale_price = decimal_value(row, "target_sale_price")
 
     if weight_kg <= 0:
         raise ValueError(f"{row['sku_id']}: weight_kg must be positive")
     if any(value < 0 for value in (product_cost, freight_per_kg, freight_fixed, return_rate)):
         raise ValueError(f"{row['sku_id']}: costs and return rate cannot be negative")
-    if target_price <= 0:
-        raise ValueError(f"{row['sku_id']}: target_price must be positive")
+    if fx_sale_to_cost <= 0:
+        raise ValueError(f"{row['sku_id']}: fx_sale_to_cost must be positive")
+    if target_sale_price <= 0:
+        raise ValueError(f"{row['sku_id']}: target_sale_price must be positive")
 
     variable_fee_rate = platform_fee + ad_cost
     target_floor_fee_rate = variable_fee_rate + target_margin
@@ -79,14 +85,15 @@ def calculate(row: dict[str, str]) -> dict[str, str]:
     freight = freight_per_kg * weight_kg + freight_fixed
     base_cost = product_cost + freight
     expected_cost = base_cost * (1 + return_rate)
-    break_even_price = expected_cost / (1 - variable_fee_rate)
-    target_floor_price = expected_cost / (1 - target_floor_fee_rate)
-    profit = target_price - expected_cost - target_price * variable_fee_rate
-    profit_margin_pct = profit / target_price * 100
+    break_even_cost = expected_cost / (1 - variable_fee_rate)
+    target_floor_cost = expected_cost / (1 - target_floor_fee_rate)
+    target_price_cost = target_sale_price * fx_sale_to_cost
+    profit = target_price_cost - expected_cost - target_price_cost * variable_fee_rate
+    profit_margin_pct = profit / target_price_cost * 100
 
-    if target_price < break_even_price:
+    if target_price_cost < break_even_cost:
         status = "BLOCKED"
-    elif target_price < target_floor_price:
+    elif target_price_cost < target_floor_cost:
         status = "REVIEW_REQUIRED"
     else:
         status = "PASS"
@@ -96,8 +103,11 @@ def calculate(row: dict[str, str]) -> dict[str, str]:
         {
             "freight": f"{freight:.2f}",
             "expected_unit_cost": f"{expected_cost:.2f}",
-            "break_even_price": f"{break_even_price:.2f}",
-            "target_floor_price": f"{target_floor_price:.2f}",
+            "break_even_price_base": f"{break_even_cost:.2f}",
+            "break_even_price_sale": f"{break_even_cost / fx_sale_to_cost:.2f}",
+            "target_floor_price_base": f"{target_floor_cost:.2f}",
+            "target_floor_price_sale": f"{target_floor_cost / fx_sale_to_cost:.2f}",
+            "target_price_base": f"{target_price_cost:.2f}",
             "profit": f"{profit:.2f}",
             "profit_margin_pct": f"{profit_margin_pct:.2f}",
             "computed_status": status,
@@ -109,11 +119,12 @@ def calculate(row: dict[str, str]) -> dict[str, str]:
 def print_table(rows: list[dict[str, str]]) -> None:
     headers = [
         "sku_id",
-        "currency",
+        "cost_currency",
+        "sale_currency",
         "expected_unit_cost",
-        "break_even_price",
-        "target_floor_price",
-        "target_price",
+        "break_even_price_sale",
+        "target_floor_price_sale",
+        "target_sale_price",
         "profit",
         "profit_margin_pct",
         "computed_status",

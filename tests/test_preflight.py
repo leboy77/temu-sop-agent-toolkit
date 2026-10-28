@@ -39,6 +39,39 @@ class PreflightTests(unittest.TestCase):
             report["blockers"],
         )
 
+    def test_complete_pilot_reaches_publish_ready(self) -> None:
+        market = load_json(ROOT / "markets/us-y1-pod/market_profile.json")
+        brief = load_json(ROOT / "examples/us-y1-pod/pilot-product.json")
+        prices = load_price_rows(ROOT / "examples/us-y1-pod/pilot-price-sheet.csv")
+        brief["assets"] = {
+            "main_images": ["demo-front.svg", "demo-back.svg"],
+            "skc_images": ["demo-color.svg"],
+            "title_candidates": ["Demo title"],
+            "title_final": "Demo title",
+            "core_selling_point": "Verified demo selling point",
+            "secondary_points": ["Verified point"],
+            "rights_evidence": ["demo-rights.txt"]
+        }
+        brief["compliance"] = {
+            "pack_ref": "demo-compliance.md",
+            "status": "PASSED",
+            "manufacturer_profile_id": "demo",
+            "market_requirements": ["manufacturer_information"]
+        }
+        brief["approvals"] = {
+            "selection": True,
+            "pricing": True,
+            "assets": True,
+            "compliance": True
+        }
+        brief["skus"][0]["image_refs"] = ["demo-front.svg"]
+
+        report = run_preflight(brief, market, prices, "PUBLISH_READY")
+
+        self.assertEqual(report["status"], "PASS")
+        self.assertEqual(report["next_action"], "human_publish_approval")
+        self.assertEqual(report["blockers"], [])
+
 
 if __name__ == "__main__":
     unittest.main()
