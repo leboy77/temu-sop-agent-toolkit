@@ -1,0 +1,53 @@
+# US-Y1-02 - 黑色多口袋工装裤
+
+## 来源
+
+- 素材目录：`records/pilot-sources/us-y1-pod/black-cargo-pants/`
+- 图片：4 张
+- 使用状态：内部候选
+- 生成来源：现有文件未保留可追溯生成器元数据
+- 授权状态：图片和款式来源待确认
+
+## 公开同类参考
+
+- [Fleece thick cargo pants](https://www.temu.com/mens-straight-leg-fleece-thick-cargo-pants-with-multiple-pockets-loose-casual-outdoor-pants-mens-work-pants-for-hiking-for-winter-g-601101317340808.html)
+- [Men's cargo pants 类目页](https://www.temu.com/c/mens-cargo-pants-o4-1644.html)
+
+检索时间：2026-10-29。公开页只作为市场参考，不能证明与当前图片完全同款。
+
+## 可见特征
+
+- 黑色工装裤
+- 左右侧贴袋
+- 直筒或宽松版型
+- 裤腿有拼接和缝线细节
+- 现有图片包含整体、口袋、腰头和裤型说明
+
+## 市场匹配
+
+适合作为美国 Y1 POD 的备用试点，因为：
+
+- 单色、单款，SKU 比多图案马甲简单
+- 细节图比女装马甲更中性
+- 可复用培训资料中的工装裤运营示例
+
+## 风险
+
+- 当前没有尺码表。
+- 没有背面、裤脚和面料特写。
+- 黑色布料照片容易丢失纹理。
+- 无法确认材质、弹性和口袋是否真实。
+- 无法确认图片权属。
+
+## 需要补充
+
+- 供应商、采购价、重量和尺寸
+- 材质和弹力
+- 尺码表
+- 背面和裤脚图
+- 图像授权
+- 目标售价
+
+## 建议
+
+如果冬季马甲的图案授权暂时无法确认，优先用这款工装裤做美国 Y1 的可执行试点。

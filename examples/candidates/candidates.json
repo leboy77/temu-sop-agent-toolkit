@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-10-29",
+  "market_candidates": [
+    {
+      "candidate_id": "EU-Y2-01",
+      "market_id": "eu-y2",
+      "name": "白色摇粒绒休闲裤",
+      "asset_dir": "records/pilot-sources/eu-y2/white-plush-trousers",
+      "image_count": 3,
+      "known_features": [
+        "白色",
+        "宽松直筒",
+        "松紧腰",
+        "抽绳",
+        "毛绒表面"
+      ],
+      "rights_status": "pending_confirmation",
+      "publish_allowed": false,
+      "missing_fields": [
+        "supplier",
+        "product_cost",
+        "material_composition",
+        "weight_kg",
+        "package_dimensions",
+        "size_chart",
+        "target_sale_price",
+        "commercial_rights"
+      ],
+      "recommendation": "首选欧洲 Y2 试点"
+    },
+    {
+      "candidate_id": "US-Y1-01",
+      "market_id": "us-y1-pod",
+      "name": "冬季印花抓绒马甲",
+      "asset_dir": "records/pilot-sources/us-y1-pod/pattern-fleece-vest",
+      "image_count": 10,
+      "variant_count": 7,
+      "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
+      "known_features": [
+        "无袖",
+        "立领",
+        "前拉链",
+        "两侧插袋",
+        "毛绒表面",
+        "多图案"
+      ],
+      "rights_status": "pending_confirmation",
+      "publish_allowed": false,
+      "missing_fields": [
+        "supplier",
+        "product_cost",
+        "material_composition",
+        "weight_kg",
+        "package_dimensions",
+        "target_sale_price",
+        "artwork_rights",
+        "manufacturer_information"
+      ],
+      "recommendation": "首选美国 Y1 POD 试点；先上 2 个图案色"
+    },
+    {
+      "candidate_id": "US-Y1-02",
+      "market_id": "us-y1-pod",
+      "name": "黑色多口袋工装裤",
+      "asset_dir": "records/pilot-sources/us-y1-pod/black-cargo-pants",
+      "image_count": 4,
+      "variant_count": 1,
+      "known_features": [
+        "黑色",
+        "多口袋",
+        "直筒或宽松",
+        "拼接细节"
+      ],
+      "rights_status": "pending_confirmation",
+      "publish_allowed": false,
+      "missing_fields": [
+        "supplier",
+        "product_cost",
+        "material_composition",
+        "weight_kg",
+        "package_dimensions",
+        "size_chart",
+        "target_sale_price",
+        "commercial_rights"
+      ],
+      "recommendation": "美国 Y1 POD 备用试点"
+    }
+  ]
+}
