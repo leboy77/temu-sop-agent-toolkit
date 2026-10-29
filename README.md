@@ -52,6 +52,7 @@ checklists/    欧洲和美国逐项发布检查
 examples/      脱敏的端到端示例
 automations/   现有浏览器扩展和 RPA 的接入边界
 examples/candidates/  从现有资料和本地素材整出的试点商品候选
+examples/public-cases/  可公开的脱敏商品案例
 docs/          来源映射和迁移计划
 archive/       私有原件说明，不存放原始 PDF
 ```
@@ -106,5 +107,5 @@ python scripts/preflight.py `
 - 公开前必须阅读 [PUBLICATION_CHECKLIST.md](PUBLICATION_CHECKLIST.md)。
 - 安全规则见 [SECURITY.md](SECURITY.md)。
 - 贡献和脱敏要求见 [CONTRIBUTING.md](CONTRIBUTING.md)。
-- 当前尚未选择开源许可证，选择说明见 [LICENSING.md](LICENSING.md)。
+- 代码采用 [MIT License](LICENSE)；商品图片、图案、商标和第三方素材不因代码许可证而自动获得公开授权。
 - 运行 `python scripts/audit_public_release.py` 检查是否存在不应公开的文件或敏感模式。

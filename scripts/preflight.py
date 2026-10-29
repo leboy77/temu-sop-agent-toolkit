@@ -57,7 +57,17 @@ def load_json(path: Path) -> dict[str, Any]:
 def load_price_rows(path: Path) -> dict[str, dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as stream:
         rows = list(csv.DictReader(stream))
-    return {row.get("sku_id", "").strip(): calculate(row) for row in rows}
+    results: dict[str, dict[str, str]] = {}
+    for row in rows:
+        sku_id = row.get("sku_id", "").strip()
+        try:
+            results[sku_id] = calculate(row)
+        except ValueError as exc:
+            invalid = dict(row)
+            invalid["computed_status"] = "INVALID"
+            invalid["validation_error"] = str(exc)
+            results[sku_id] = invalid
+    return results
 
 
 def is_nonempty(value: Any) -> bool:
@@ -89,7 +99,10 @@ def run_preflight(
         blockers.append("INPUT_MISSING: product names")
     if not product.get("category") or not product.get("business_mode"):
         blockers.append("INPUT_MISSING: product category or business_mode")
-    if not specs.get("material") or "待" in str(specs.get("material")):
+    material_text = str(specs.get("material", "")).lower()
+    if not specs.get("material") or any(
+        marker in material_text for marker in ("pending", "tbd", "待")
+    ):
         blockers.append("INPUT_MISSING: confirmed material")
     if not isinstance(specs.get("weight_kg"), (int, float)) or specs["weight_kg"] <= 0:
         blockers.append("INPUT_MISSING: positive spec weight_kg")
@@ -119,7 +132,15 @@ def run_preflight(
         result = price_rows.get(sku_id)
         if not result:
             continue
-        if result["computed_status"] == "BLOCKED":
+        if result["computed_status"] == "INVALID":
+            error = result.get("validation_error", "")
+            prefix = f"{sku_id}: "
+            if error.startswith(prefix):
+                error = error[len(prefix):]
+            blockers.append(
+                f"PRICE_INPUT_INVALID: {sku_id}: {error}"
+            )
+        elif result["computed_status"] == "BLOCKED":
             blockers.append(f"PRICE_BELOW_FLOOR: {sku_id}")
         elif result["computed_status"] == "REVIEW_REQUIRED":
             warnings.append(f"PRICE_BELOW_TARGET_MARGIN: {sku_id}")
@@ -171,17 +192,18 @@ def run_preflight(
 
     status = "PASS"
     if blockers:
-        status = "REVIEW_REQUIRED" if target_rank <= STATES.index("PRICED") else "BLOCKED"
+        status = "BLOCKED"
     elif warnings:
         status = "REVIEW_REQUIRED"
 
     current_state = str(meta.get("status", "DRAFT"))
     next_state = target_state if not blockers else current_state
-    next_action = (
-        NEXT_ACTION.get(target_state, "manual_review")
-        if not blockers
-        else blocker_module(blockers[0])
-    )
+    if not blockers:
+        next_action = NEXT_ACTION.get(target_state, "manual_review")
+    elif any(blocker.startswith("PRICE_") for blocker in blockers):
+        next_action = "02_pricing"
+    else:
+        next_action = blocker_module(blockers[0])
     return {
         "status": status,
         "current_state": current_state,
@@ -194,15 +216,16 @@ def run_preflight(
         "warnings": warnings,
         "price_results": {
             sku_id: {
-                "break_even_price_base": row["break_even_price_base"],
-                "break_even_price_sale": row["break_even_price_sale"],
-                "target_floor_price_base": row["target_floor_price_base"],
-                "target_floor_price_sale": row["target_floor_price_sale"],
-                "target_price_base": row["target_price_base"],
-                "target_sale_price": row["target_sale_price"],
-                "profit": row["profit"],
-                "profit_margin_pct": row["profit_margin_pct"],
+                "break_even_price_base": row.get("break_even_price_base", ""),
+                "break_even_price_sale": row.get("break_even_price_sale", ""),
+                "target_floor_price_base": row.get("target_floor_price_base", ""),
+                "target_floor_price_sale": row.get("target_floor_price_sale", ""),
+                "target_price_base": row.get("target_price_base", ""),
+                "target_sale_price": row.get("target_sale_price", ""),
+                "profit": row.get("profit", ""),
+                "profit_margin_pct": row.get("profit_margin_pct", ""),
                 "computed_status": row["computed_status"],
+                "validation_error": row.get("validation_error", ""),
             }
             for sku_id, row in price_rows.items()
             if sku_id in sku_ids
