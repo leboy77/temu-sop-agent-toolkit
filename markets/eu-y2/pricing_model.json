@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "model_id": "eu-y2-supplier-price-card",
+  "market_id": "eu-y2",
+  "currency": "CNY",
+  "source_effective_date": "2026-04-25",
+  "source_status": "private_supplier_quotation",
+  "formulas": {
+    "current_logistics": "weight_kg * current_freight_per_kg + current_handling_fee",
+    "landed_cost": "current_logistics + purchase_cost",
+    "cost_after_returns": "landed_cost * (1 + return_rate)",
+    "declared_price": "sale_price / declared_price_divisor",
+    "launch_price": "declared_price * launch_multiplier",
+    "traffic_acceleration_price": "sale_price * traffic_multiplier",
+    "normal_profit": "country_sale_price + subsidy_amount - cost_after_returns",
+    "normal_roi": "normal_profit / landed_cost",
+    "minimum_profit": "country_minimum_sale_price + subsidy_amount - cost_after_returns",
+    "minimum_roi": "minimum_profit / landed_cost",
+    "new_logistics_cost": "new_freight_per_kg * weight_kg + new_handling_fee",
+    "new_cost_after_returns": "(new_logistics_cost + purchase_cost) * (1 + return_rate)",
+    "new_logistics_profit": "country_sale_price + subsidy_amount - new_cost_after_returns",
+    "new_logistics_roi": "new_logistics_profit / (new_logistics_cost + purchase_cost)"
+  },
+  "coefficients": {
+    "declared_price_divisor": 0.9,
+    "launch_multiplier": 1.8,
+    "traffic_multiplier": 1.1
+  },
+  "rules": [
+    "物流单价、操作费、运补和重量区间来自私有国家费率表",
+    "同一国家存在多个重量区间时，必须选择覆盖实际重量的区间",
+    "售价和最低售价按国家分别维护，不允许用单一售价覆盖所有国家",
+    "不允许把售价和最低售价视为同一个字段",
+    "新物流方案缺少操作费时只输出当前方案，并标记未计算",
+    "计算结果只做财务参考，最终价格仍需人工审批"
+  ],
+  "private_rate_file": "configure_privately"
+}

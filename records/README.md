@@ -21,5 +21,7 @@
 - `pilot-sources/eu-y2/white-plush-trousers/`
 - `pilot-sources/us-y1-pod/pattern-fleece-vest/`
 - `pilot-sources/us-y1-pod/black-cargo-pants/`
+- `pilots/eu-y2/zsk-work-pants/`
+- `source-snapshots/eu-y2-price-sheet-all-tabs-20261029.json`
 
 这些图片默认被 `.gitignore` 排除，权利状态均为待确认，仅用于内部评估。

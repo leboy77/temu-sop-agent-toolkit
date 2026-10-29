@@ -33,6 +33,9 @@
 - `setup_and_fulfillment.md`
 - `compliance.md`
 - `daily_operations.md`
+- `pricing_model.json`
+
+核价表的结构审计和公式说明见 [docs/eu-y2-price-sheet-audit.md](../../docs/eu-y2-price-sheet-audit.md)。
 
 ## 源文档映射
 

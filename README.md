@@ -78,6 +78,18 @@ python scripts/preflight.py `
 
 检查器返回 `PASS` 才可进入下一模块；返回 `BLOCKED` 时按 `next_action` 回到对应模块。
 
+欧洲 Y2 的国家费率核算：
+
+```powershell
+python scripts/calc_eu_y2_pricing.py `
+  --rates templates/eu-y2-country-rates.csv `
+  --weight-kg 0.5 `
+  --purchase-cost 38 `
+  --return-rate-pct 15
+```
+
+具体国家费率必须保存在私有目录，不要提交到公开仓库。
+
 ## 与已有工具的关系
 
 现有核价、自动复色、下架归档和广告监控工具属于本项目的执行层。它们应读取标准化输入、输出运行记录，不应自行决定选品、定价或合规结论。

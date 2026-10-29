@@ -44,6 +44,8 @@
   },
   "pricing": {
     "currency": "EUR",
+    "model_ref": "markets/eu-y2/pricing_model.json",
+    "private_rate_table": "configure_privately",
     "price_source": "price_sheet.csv",
     "activity_template_rebuild_when_price_changes": true,
     "human_approval_required": true
