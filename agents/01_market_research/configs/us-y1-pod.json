@@ -1,0 +1,27 @@
+{
+  "market_id": "us-y1-pod",
+  "market_name": "美国 Y1 POD",
+  "platform": "temu",
+  "default_currency": "USD",
+  "sales_window_days": 30,
+  "new_listing_days": 90,
+  "minimum_analysis_sample": 50,
+  "minimum_small_sample": 30,
+  "brand_concentration_guideline": 0.5,
+  "price_bins": 10,
+  "valley_min_drop_pct": 15,
+  "max_price_bands": 5,
+  "required_risk_checks": [
+    "intellectual_property",
+    "print_and_character_rights",
+    "size_accuracy",
+    "material_and_care",
+    "product_label",
+    "three_warehouse_fulfillment"
+  ],
+  "known_limits": [
+    "POD 图案必须在目标底色上验收",
+    "单期快照不能判断趋势",
+    "核价平台费率与物流成本必须来自当前后台"
+  ]
+}

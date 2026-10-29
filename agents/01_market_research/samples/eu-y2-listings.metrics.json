@@ -1,0 +1,550 @@
+{
+  "meta": {
+    "market_id": "eu-y2",
+    "target_market": "Europe",
+    "platform": "temu",
+    "currency": "EUR",
+    "sales_window_days": 30,
+    "data_date": "2026-10-29",
+    "source_file": "eu-y2-listings.csv",
+    "row_count_raw": 70,
+    "row_count_kept": 70,
+    "column_map": {
+      "title": "商品名称",
+      "price": "售价",
+      "sales": "近30天销量",
+      "revenue": "月销售额",
+      "seller": "店铺",
+      "brand": "品牌",
+      "rating": "评分",
+      "review_count": "评价数",
+      "listing_age_days": "上架时间",
+      "url": "商品链接",
+      "status": "商品状态",
+      "sku_count": "SKU数",
+      "color_count": "颜色数",
+      "style": "版型",
+      "material": "材质"
+    },
+    "parse_stats": {
+      "dropped": 0,
+      "revenue_derived": 17,
+      "age_parsed": 70
+    }
+  },
+  "market_capacity": {
+    "listing_count": 70,
+    "total_sales": 12052,
+    "total_revenue": 445146.96,
+    "average_price": 35.88,
+    "median_price": 35.78,
+    "min_price": 23.01,
+    "max_price": 48.5,
+    "implied_average_price": 36.94,
+    "average_sales_per_listing": 172.17
+  },
+  "brand_concentration": {
+    "subject_count": 2,
+    "missing_items": 0,
+    "cr3": 1.0,
+    "cr10": 1.0,
+    "cr10_by_sales": 1.0,
+    "hhi": 5518.0,
+    "warning": "Subject count 2 <= 10; CR10 is not informative. Use CR3 and HHI.",
+    "top_list": [
+      {
+        "rank": 1,
+        "name": "Unbranded",
+        "revenue": 294212.53,
+        "revenue_share": 0.6609,
+        "sales": 8001,
+        "sales_share": 0.6639,
+        "item_count": 46,
+        "item_share": 0.6571
+      },
+      {
+        "rank": 2,
+        "name": "Generic",
+        "revenue": 150934.43,
+        "revenue_share": 0.3391,
+        "sales": 4051,
+        "sales_share": 0.3361,
+        "item_count": 24,
+        "item_share": 0.3429
+      }
+    ]
+  },
+  "seller_concentration": {
+    "subject_count": 29,
+    "missing_items": 0,
+    "cr3": 0.4301,
+    "cr10": 0.6948,
+    "cr10_by_sales": 0.6828,
+    "hhi": 920.7,
+    "warning": null,
+    "top_list": [
+      {
+        "rank": 1,
+        "name": "ShopB",
+        "revenue": 95369.6,
+        "revenue_share": 0.2142,
+        "sales": 2526,
+        "sales_share": 0.2096,
+        "item_count": 12,
+        "item_share": 0.1714
+      },
+      {
+        "rank": 2,
+        "name": "ShopA",
+        "revenue": 73357.2,
+        "revenue_share": 0.1648,
+        "sales": 1954,
+        "sales_share": 0.1621,
+        "item_count": 16,
+        "item_share": 0.2286
+      },
+      {
+        "rank": 3,
+        "name": "Vendor12",
+        "revenue": 22736.09,
+        "revenue_share": 0.0511,
+        "sales": 617,
+        "sales_share": 0.0512,
+        "item_count": 2,
+        "item_share": 0.0286
+      },
+      {
+        "rank": 4,
+        "name": "Vendor04",
+        "revenue": 20967.01,
+        "revenue_share": 0.0471,
+        "sales": 613,
+        "sales_share": 0.0509,
+        "item_count": 2,
+        "item_share": 0.0286
+      },
+      {
+        "rank": 5,
+        "name": "Vendor11",
+        "revenue": 18120.21,
+        "revenue_share": 0.0407,
+        "sales": 538,
+        "sales_share": 0.0446,
+        "item_count": 2,
+        "item_share": 0.0286
+      },
+      {
+        "rank": 6,
+        "name": "Vendor06",
+        "revenue": 18094.44,
+        "revenue_share": 0.0406,
+        "sales": 452,
+        "sales_share": 0.0375,
+        "item_count": 2,
+        "item_share": 0.0286
+      },
+      {
+        "rank": 7,
+        "name": "Vendor13",
+        "revenue": 15551.65,
+        "revenue_share": 0.0349,
+        "sales": 365,
+        "sales_share": 0.0303,
+        "item_count": 2,
+        "item_share": 0.0286
+      },
+      {
+        "rank": 8,
+        "name": "Vendor19",
+        "revenue": 15154.48,
+        "revenue_share": 0.034,
+        "sales": 374,
+        "sales_share": 0.031,
+        "item_count": 1,
+        "item_share": 0.0143
+      },
+      {
+        "rank": 9,
+        "name": "Vendor26",
+        "revenue": 14997.85,
+        "revenue_share": 0.0337,
+        "sales": 365,
+        "sales_share": 0.0303,
+        "item_count": 1,
+        "item_share": 0.0143
+      },
+      {
+        "rank": 10,
+        "name": "Vendor25",
+        "revenue": 14930.25,
+        "revenue_share": 0.0335,
+        "sales": 425,
+        "sales_share": 0.0353,
+        "item_count": 1,
+        "item_share": 0.0143
+      }
+    ]
+  },
+  "price_bands": {
+    "price_range": [
+      23.01,
+      48.5
+    ],
+    "bin_width": 2.55,
+    "bins": [
+      {
+        "index": 1,
+        "price_low": 23.01,
+        "price_high": 25.56,
+        "item_count": 10,
+        "sales": 487,
+        "revenue": 11624.82,
+        "average_sales": 48.7
+      },
+      {
+        "index": 2,
+        "price_low": 25.56,
+        "price_high": 28.11,
+        "item_count": 7,
+        "sales": 659,
+        "revenue": 17865.99,
+        "average_sales": 94.14
+      },
+      {
+        "index": 3,
+        "price_low": 28.11,
+        "price_high": 30.66,
+        "item_count": 3,
+        "sales": 394,
+        "revenue": 11168.68,
+        "average_sales": 131.33
+      },
+      {
+        "index": 4,
+        "price_low": 30.66,
+        "price_high": 33.21,
+        "item_count": 10,
+        "sales": 2094,
+        "revenue": 67250.72,
+        "average_sales": 209.4
+      },
+      {
+        "index": 5,
+        "price_low": 33.21,
+        "price_high": 35.76,
+        "item_count": 5,
+        "sales": 1622,
+        "revenue": 57041.28,
+        "average_sales": 324.4
+      },
+      {
+        "index": 6,
+        "price_low": 35.76,
+        "price_high": 38.3,
+        "item_count": 5,
+        "sales": 1317,
+        "revenue": 48166.36,
+        "average_sales": 263.4
+      },
+      {
+        "index": 7,
+        "price_low": 38.3,
+        "price_high": 40.85,
+        "item_count": 7,
+        "sales": 1975,
+        "revenue": 77844.5,
+        "average_sales": 282.14
+      },
+      {
+        "index": 8,
+        "price_low": 40.85,
+        "price_high": 43.4,
+        "item_count": 5,
+        "sales": 1237,
+        "revenue": 51423.44,
+        "average_sales": 247.4
+      },
+      {
+        "index": 9,
+        "price_low": 43.4,
+        "price_high": 45.95,
+        "item_count": 8,
+        "sales": 1647,
+        "revenue": 73146.24,
+        "average_sales": 205.88
+      },
+      {
+        "index": 10,
+        "price_low": 45.95,
+        "price_high": 48.5,
+        "item_count": 10,
+        "sales": 620,
+        "revenue": 29614.93,
+        "average_sales": 62.0
+      }
+    ],
+    "valleys": [
+      {
+        "bin_index": 4,
+        "price": 33.21,
+        "drop": 0.7571
+      }
+    ],
+    "suggested_bands": [
+      {
+        "band_index": 1,
+        "price_low": 23.01,
+        "price_high": 33.21,
+        "item_count": 30,
+        "sales": 3634,
+        "revenue": 107910.21,
+        "average_sales": 121.13
+      },
+      {
+        "band_index": 2,
+        "price_low": 33.21,
+        "price_high": 48.5,
+        "item_count": 40,
+        "sales": 8418,
+        "revenue": 337236.75,
+        "average_sales": 210.45
+      }
+    ],
+    "valley_min_drop": 0.15,
+    "max_bands": 5
+  },
+  "new_listing_signal": {
+    "status": "OK",
+    "new_listing_days": 90,
+    "aged_listing_count": 70,
+    "new_listing_count": 11,
+    "new_listing_item_share": 0.1571,
+    "new_listing_sales_share": 0.1219,
+    "new_listing_average_sales": 133.55,
+    "old_listing_average_sales": 179.37,
+    "all_listing_average_sales": 172.17,
+    "new_vs_all_efficiency": 0.78
+  },
+  "discount_summary": {
+    "status": "NO_DATA",
+    "listing_count": 0
+  },
+  "config_matrix": {
+    "style": {
+      "value_count": 3,
+      "missing_items": 0,
+      "average_sales_per_listing": 172.17,
+      "rows": [
+        {
+          "value": "Relaxed fit",
+          "item_count": 23,
+          "item_share": 0.3286,
+          "sales": 4164,
+          "sales_share": 0.3455,
+          "revenue": 156633.44,
+          "revenue_share": 0.3519,
+          "average_sales": 181.04,
+          "flags": [
+            "HIGH_SALES_SHARE"
+          ]
+        },
+        {
+          "value": "Wide leg",
+          "item_count": 24,
+          "item_share": 0.3429,
+          "sales": 4051,
+          "sales_share": 0.3361,
+          "revenue": 150934.43,
+          "revenue_share": 0.3391,
+          "average_sales": 168.79,
+          "flags": [
+            "HIGH_SALES_SHARE"
+          ]
+        },
+        {
+          "value": "Straight leg",
+          "item_count": 23,
+          "item_share": 0.3286,
+          "sales": 3837,
+          "sales_share": 0.3184,
+          "revenue": 137579.09,
+          "revenue_share": 0.3091,
+          "average_sales": 166.83,
+          "flags": [
+            "HIGH_SALES_SHARE"
+          ]
+        }
+      ]
+    },
+    "material": {
+      "value_count": 3,
+      "missing_items": 0,
+      "average_sales_per_listing": 172.17,
+      "rows": [
+        {
+          "value": "Sherpa-look",
+          "item_count": 23,
+          "item_share": 0.3286,
+          "sales": 4164,
+          "sales_share": 0.3455,
+          "revenue": 156633.44,
+          "revenue_share": 0.3519,
+          "average_sales": 181.04,
+          "flags": [
+            "HIGH_SALES_SHARE"
+          ]
+        },
+        {
+          "value": "Fleece-look",
+          "item_count": 24,
+          "item_share": 0.3429,
+          "sales": 4051,
+          "sales_share": 0.3361,
+          "revenue": 150934.43,
+          "revenue_share": 0.3391,
+          "average_sales": 168.79,
+          "flags": [
+            "HIGH_SALES_SHARE"
+          ]
+        },
+        {
+          "value": "Cotton blend",
+          "item_count": 23,
+          "item_share": 0.3286,
+          "sales": 3837,
+          "sales_share": 0.3184,
+          "revenue": 137579.09,
+          "revenue_share": 0.3091,
+          "average_sales": 166.83,
+          "flags": [
+            "HIGH_SALES_SHARE"
+          ]
+        }
+      ]
+    },
+    "color_count": {
+      "value_count": 5,
+      "missing_items": 0,
+      "average_sales_per_listing": 172.17,
+      "rows": [
+        {
+          "value": "4.0",
+          "item_count": 14,
+          "item_share": 0.2,
+          "sales": 2572,
+          "sales_share": 0.2134,
+          "revenue": 94728.04,
+          "revenue_share": 0.2128,
+          "average_sales": 183.71,
+          "flags": []
+        },
+        {
+          "value": "2.0",
+          "item_count": 14,
+          "item_share": 0.2,
+          "sales": 2546,
+          "sales_share": 0.2113,
+          "revenue": 92622.18,
+          "revenue_share": 0.2081,
+          "average_sales": 181.86,
+          "flags": []
+        },
+        {
+          "value": "3.0",
+          "item_count": 14,
+          "item_share": 0.2,
+          "sales": 2543,
+          "sales_share": 0.211,
+          "revenue": 95030.27,
+          "revenue_share": 0.2135,
+          "average_sales": 181.64,
+          "flags": []
+        },
+        {
+          "value": "1.0",
+          "item_count": 14,
+          "item_share": 0.2,
+          "sales": 2239,
+          "sales_share": 0.1858,
+          "revenue": 82898.6,
+          "revenue_share": 0.1862,
+          "average_sales": 159.93,
+          "flags": []
+        },
+        {
+          "value": "5.0",
+          "item_count": 14,
+          "item_share": 0.2,
+          "sales": 2152,
+          "sales_share": 0.1786,
+          "revenue": 79867.87,
+          "revenue_share": 0.1794,
+          "average_sales": 153.71,
+          "flags": []
+        }
+      ]
+    },
+    "sku_count": {
+      "value_count": 5,
+      "missing_items": 0,
+      "average_sales_per_listing": 172.17,
+      "rows": [
+        {
+          "value": "20.0",
+          "item_count": 14,
+          "item_share": 0.2,
+          "sales": 2572,
+          "sales_share": 0.2134,
+          "revenue": 94728.04,
+          "revenue_share": 0.2128,
+          "average_sales": 183.71,
+          "flags": []
+        },
+        {
+          "value": "10.0",
+          "item_count": 14,
+          "item_share": 0.2,
+          "sales": 2546,
+          "sales_share": 0.2113,
+          "revenue": 92622.18,
+          "revenue_share": 0.2081,
+          "average_sales": 181.86,
+          "flags": []
+        },
+        {
+          "value": "15.0",
+          "item_count": 14,
+          "item_share": 0.2,
+          "sales": 2543,
+          "sales_share": 0.211,
+          "revenue": 95030.27,
+          "revenue_share": 0.2135,
+          "average_sales": 181.64,
+          "flags": []
+        },
+        {
+          "value": "5.0",
+          "item_count": 14,
+          "item_share": 0.2,
+          "sales": 2239,
+          "sales_share": 0.1858,
+          "revenue": 82898.6,
+          "revenue_share": 0.1862,
+          "average_sales": 159.93,
+          "flags": []
+        },
+        {
+          "value": "25.0",
+          "item_count": 14,
+          "item_share": 0.2,
+          "sales": 2152,
+          "sales_share": 0.1786,
+          "revenue": 79867.87,
+          "revenue_share": 0.1794,
+          "average_sales": 153.71,
+          "flags": []
+        }
+      ]
+    }
+  }
+}

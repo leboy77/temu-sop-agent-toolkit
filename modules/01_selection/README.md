@@ -4,6 +4,9 @@
 
 把候选商品整理成可判断的比较集，辅助业务负责人做选品决定。Agent 不代替最终决策。
 
+详细的市场问卷、指标计算和 Prompt 位于
+[`agents/01_market_research`](../../agents/01_market_research/README.md)。
+
 ## 输入
 
 - 来源链接或类目导出

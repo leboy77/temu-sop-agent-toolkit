@@ -5,7 +5,7 @@ description: >
   商品素材、合规、上架、ERP/履约、活动、流量、广告和售后分析。
   不用于绕过平台规则、伪造数据、自动审批或未经人工确认的批量提交。
 metadata:
-  version: 0.3.0
+  version: 0.4.0
   category: e-commerce/temu-operations
   status: draft
 ---
@@ -19,7 +19,7 @@ metadata:
 | 任务 | 入口 |
 | --- | --- |
 | 判断当前该做什么、检查上下游是否齐全 | `modules/00_orchestrator/README.md` |
-| 选品、采集、款式筛选 | `modules/01_selection/README.md` |
+| 选品、类目容量、价格带、集中度和款式筛选 | `agents/01_market_research/SKILL.md` |
 | 核价、SKU 结构、最低价 | `modules/02_pricing/README.md` |
 | 商品图、SKC 颜色图、标题和卖点 | `modules/03_assets/README.md` |
 | 商品列表字段、模板和批量发布 | `modules/04_listing/README.md` |

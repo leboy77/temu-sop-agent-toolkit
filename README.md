@@ -45,6 +45,7 @@
 core/          通用流程、数据契约、质量门和异常分类
 markets/       欧洲 Y2 与美国 Y1 POD 的市场配置和操作说明
 modules/       八个可复用业务能力
+agents/        可直接执行的 AI 工作流；当前已有 Temu 市场分析 Agent
 schemas/       机器可读的数据结构
 templates/     商品、核价、合规和日报模板
 scripts/       确定性计算与检查

@@ -1,0 +1,27 @@
+{
+  "market_id": "eu-y2",
+  "market_name": "欧洲 Y2",
+  "platform": "temu",
+  "default_currency": "EUR",
+  "sales_window_days": 30,
+  "new_listing_days": 90,
+  "minimum_analysis_sample": 50,
+  "minimum_small_sample": 30,
+  "brand_concentration_guideline": 0.5,
+  "price_bins": 10,
+  "valley_min_drop_pct": 15,
+  "max_price_bands": 5,
+  "required_risk_checks": [
+    "vat",
+    "eu_responsible_person",
+    "manufacturer_information",
+    "packaging_epr",
+    "product_label",
+    "multi_country_fulfillment"
+  ],
+  "known_limits": [
+    "单期快照不能判断趋势",
+    "品牌集中度阈值是分析参考，不是平台规定",
+    "最终售价仍需按国家核价表和当前平台费率复核"
+  ]
+}
