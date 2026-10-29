@@ -18,10 +18,9 @@ archive/source-private/
 !templates/**/*.xlsx
 !examples/**/*.png
 
-# Runtime records may contain business data
-records/*.json
-records/*.csv
-records/*.log
+# Runtime records and product source assets may contain business data
+records/**
+!records/README.md
 
 # Secrets and credentials
 *.pem

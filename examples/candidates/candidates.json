@@ -5,7 +5,7 @@
       "candidate_id": "EU-Y2-01",
       "market_id": "eu-y2",
       "name": "白色摇粒绒休闲裤",
-      "asset_dir": "records/pilot-sources/eu-y2/white-plush-trousers",
+      "asset_pack": "private_not_published",
       "image_count": 3,
       "known_features": [
         "白色",
@@ -32,7 +32,7 @@
       "candidate_id": "US-Y1-01",
       "market_id": "us-y1-pod",
       "name": "冬季印花抓绒马甲",
-      "asset_dir": "records/pilot-sources/us-y1-pod/pattern-fleece-vest",
+      "asset_pack": "private_not_published",
       "image_count": 10,
       "variant_count": 7,
       "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
@@ -62,7 +62,7 @@
       "candidate_id": "US-Y1-02",
       "market_id": "us-y1-pod",
       "name": "黑色多口袋工装裤",
-      "asset_dir": "records/pilot-sources/us-y1-pod/black-cargo-pants",
+      "asset_pack": "private_not_published",
       "image_count": 4,
       "variant_count": 1,
       "known_features": [

@@ -98,3 +98,13 @@ python scripts/preflight.py `
 当前已经可以运行核价和阶段检查，详细推进步骤见 [ROADMAP.md](ROADMAP.md)。
 
 参考架构：[AI-Cross-Border-Ecommerce-Agent-Toolkit](https://github.com/heqiangdiao-wq/AI-Cross-Border-Ecommerce-Agent-Toolkit)。
+
+## 公开准备
+
+本仓库计划在未来公开，因此采用“代码和脱敏方法进入 Git，原始资料和商品源图留在私有目录”的结构。
+
+- 公开前必须阅读 [PUBLICATION_CHECKLIST.md](PUBLICATION_CHECKLIST.md)。
+- 安全规则见 [SECURITY.md](SECURITY.md)。
+- 贡献和脱敏要求见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+- 当前尚未选择开源许可证，选择说明见 [LICENSING.md](LICENSING.md)。
+- 运行 `python scripts/audit_public_release.py` 检查是否存在不应公开的文件或敏感模式。
