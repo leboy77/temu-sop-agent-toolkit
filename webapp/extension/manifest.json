@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Temu Market Capture",
+  "version": "0.1.0",
+  "description": "Capture visible Temu category cards and send them to the local market dashboard.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["http://127.0.0.1:8766/*"],
+  "action": {
+    "default_title": "Capture Temu listings",
+    "default_popup": "popup.html"
+  }
+}

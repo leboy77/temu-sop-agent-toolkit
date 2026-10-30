@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temu Market Capture</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="mark">TM</div>
+    <div>
+      <h1>Market Capture</h1>
+      <p>采集当前页面的公开商品卡片</p>
+    </div>
+  </header>
+
+  <main>
+    <label>
+      Temu 市场
+      <select id="market">
+        <option value="us-y1-pod">美国 Y1 POD</option>
+        <option value="eu-y2">欧洲 Y2</option>
+      </select>
+    </label>
+
+    <div class="grid">
+      <label>
+        币种
+        <select id="currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="CNY">CNY</option>
+        </select>
+      </label>
+      <label>
+        销量口径
+        <select id="salesWindow">
+          <option value="0">不确定</option>
+          <option value="7">7 天</option>
+          <option value="30">30 天</option>
+          <option value="90">90 天</option>
+        </select>
+      </label>
+    </div>
+
+    <label>
+      商品卡片 CSS 选择器（可选）
+      <input id="cardSelector" placeholder="留空自动识别商品链接">
+    </label>
+
+    <p class="warning">页面中的“已售”通常不是近 30 天销量。销量口径不确定时只能导出数据，不能运行市场分析。</p>
+
+    <button id="capture" class="primary">采集当前页面</button>
+    <div id="captureSummary" class="summary">尚未采集</div>
+    <div class="actions">
+      <button id="send" disabled>发送到本地分析台</button>
+      <button id="downloadCsv" class="secondary" disabled>下载 CSV</button>
+      <button id="downloadJson" class="secondary" disabled>下载 JSON</button>
+    </div>
+    <p id="status" class="status"></p>
+  </main>
+
+  <footer>不读取 Cookie、Token 或账号资料</footer>
+  <script src="popup.js"></script>
+</body>
+</html>

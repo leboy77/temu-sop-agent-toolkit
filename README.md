@@ -46,6 +46,7 @@ core/          通用流程、数据契约、质量门和异常分类
 markets/       欧洲 Y2 与美国 Y1 POD 的市场配置和操作说明
 modules/       八个可复用业务能力
 agents/        可直接执行的 AI 工作流；当前已有 Temu 市场分析 Agent
+webapp/        本地市场分析网页和浏览器采集插件
 schemas/       机器可读的数据结构
 templates/     商品、核价、合规和日报模板
 scripts/       确定性计算与检查
@@ -67,6 +68,25 @@ archive/       私有原件说明，不存放原始 PDF
 5. 按目标市场打开 `markets/eu-y2/README.md` 或 `markets/us-y1-pod/README.md`。
 6. 从 `modules/00_orchestrator/README.md` 开始推进状态。
 7. 每次异常写入 `templates/exception_log.csv`，不要只留在聊天或截图中。
+
+## 网页控制台与采集插件
+
+本地控制台支持上传 Temu 类目 CSV、载入美国/欧洲样本、计算价格带和市场
+集中度，并可选调用 OpenAI Responses API 生成业务解读：
+
+```powershell
+.\webapp\start.ps1
+```
+
+打开 `http://127.0.0.1:8766`。OpenAI Key 只放在服务端环境变量或
+`webapp/.env`，不会发送给网页。
+
+浏览器插件位于 `webapp/extension/`，用于采集用户当前打开的 Temu 页面中
+已经加载的公开商品卡，支持发送到本地分析台或导出 CSV/JSON。插件不会读取
+Cookie、Token 或账号资料，也不会调用隐藏接口。
+
+真实页面中的“已售”通常是累计销量，不是近 30 天销量。只有确认销量窗口
+后才能使用插件数据做市场容量判断；无法确认时仍可导出原始字段供补数。
 
 美国示例：
 
